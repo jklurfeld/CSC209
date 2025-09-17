@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link id="theme" rel="stylesheet" href="lightMode.css">
+</head>
+
+<body>
+
+<div class="header">
+  <h1>Jessica's Schedule <img src="cats.jpg" width="100px"></h1>
+  <p>I spent 2 hours on technical.</p>
+</div>
+
+<div style="overflow:auto">
+  <div class="menu">
+    <a href="https://www.smith.edu/academics/computer-science#computer-science-major">Computer Science Major Requirements</a>
+    <a href="https://www.smith.edu/academics/programs-courses/academic-programs/music#music-major">Music Major Requirements</a>
+    <a href="https://www.smith.edu/academics/registrar/degree-requirements">Degree Requirements</a>
+    
+    <button onclick="change()">Toggle dark mode</button>
+
+    <!-- followed this tutorial: https://www.geeksforgeeks.org/javascript/how-to-switch-between-multiple-css-stylesheets-using-javascript/-->
+    <script>
+      function change()  {
+        let theme = document.getElementById("theme");
+        if (theme.getAttribute("href") == "lightMode.css") {
+          theme.setAttribute("href", "darkMode.css");
+        }
+        else {
+          theme.setAttribute("href", "lightMode.css");
+        }
+      }
+    </script>
+  </div>
+
+  <div class="main">
+    <table>
+        <tr>
+          <th>Course Title</th>
+          <th>Number of Credits</th>
+          <th>Class Times</th>
+        </tr>
+        <tr>
+          <td><a href="bach.html">J.S. Bach Then and Now</a></td>
+          <td>3</td>
+          <td>M 5:15 - 7:45pm</td>
+        </tr>
+        <tr>
+          <td><a href="voice.html">Voice Lessons</a></td>
+          <td>2</td>
+          <td>M 11 - 12pm</td>
+        </tr>
+        <tr>
+          <td><a href="webProgramming.html">Web Programming</a></td>
+          <td>4</td>
+          <td>TTh 10:50 - 12:05pm</td>
+        </tr>
+        <tr>
+        <td><a href="yoga.html">Yoga</a></td>
+          <td>1</td>
+          <td>MW 9:25 - 10:15am</td>
+        </tr>
+        <tr>
+            <td><a href="capstoneRecital.html">Capstone Recital: Clarinet</a></td>
+            <td>4</td>
+            <td>Th 4:30 - 6:30pm</td>
+        </tr>
+        <tr>
+            <td>Orchestra</td>
+            <td>1</td>
+            <td>T 7 - 9:30pm</td>
+        </tr>
+        <tr>
+            <td>Glee Club</td>
+            <td>1</td>
+            <td>M 4:30 - 5:40pm, W 4:10 - 5:40pm</td>
+        </tr>
+        <tr>
+            <td>Chamber Singers</td>
+            <td>1</td>
+            <td>MTW 5:40 - 6:40pm</td>
+        </tr>
+    </table>
+    <br>
+    <button type="button" onclick="document.getElementById('demo').innerHTML = 17">
+        Click me to display total credits</button>
+    <p id="demo"></p>
+  </div>
+
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,1 @@
+This is the string method for changing HTML like in ex02.html from Week3

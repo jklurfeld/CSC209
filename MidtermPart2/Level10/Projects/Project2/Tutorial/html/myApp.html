@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<!-- reference: https://stackoverflow.com/questions/49060359/change-content-of-div-based-on-radio-button-selection -->
+
+<input type="radio" id="redRadio" onclick="change(this)" name="color" value="red">red<br>
+<input type="radio" id="blueRadio" onclick="change(this)" name="color" value="blue">blue<br>
+<input type="radio" id="greenRadio" onclick="change(this)" name="color" value="green">green<br>
+<br>
+<table id="table">
+    <tr>
+      <th>Person 1</th>
+      <th>Person 2</th>
+      <th>Person 3</th>
+    </tr>
+    <tr>
+      <td>Emil</td>
+      <td>Tobias</td>
+      <td>Linus</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>14</td>
+      <td>10</td>
+    </tr>
+  </table>
+
+<script>
+
+function change(radio){
+    table = document.getElementById("table");
+    // if (radio.checked == true && radio.id=="redRadio"){
+        table.style.color = radio.value;
+    
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+<h1>Frequently Asked Questions</h1>
+
+<div class="nav">
+    <!-- found how to send button to another page here: https://stackoverflow.com/questions/2906582/how-do-i-create-an-html-button-that-acts-like-a-link -->
+    <button class="navButton" onclick="location.href='home.html';">Home</button>
+    <button class="navButton"  onclick="location.href='menu.html';">Menu</button>
+    <button class="navButton" onclick="location.href='faq.html';">FAQs</button>
+</div>
+
+<button class = plus onclick="collapseAll()">Collapse All</button> <button class = "plus" onclick="showAll()">Show All</button>
+<br>
+<ul>
+    <li  class="question"><button class="plus" onclick="showAnswer(0);">+</button> What time should I arrive?
+        <ul class="answer" id="0">
+            <li>5pm.</li>
+        </ul>
+    </li>
+    <li class="question"><button class="plus" onclick="showAnswer(1)">+</button> Where is it being held?
+        <ul class="answer" id ="1">
+            <li>17 Prospect St.</li>
+        </ul>
+    </li>
+    <li class="question"><button class="plus" onclick="showAnswer(2)">+</button> Can I bring guests?
+        <ul class="answer" id="2">
+            <li>No.</li>
+        </ul>
+    </li>
+    <li class="question"><button class="plus" onclick="showAnswer(3)">+</button> Will there be vegetarian options?
+        <ul class="answer" id="3">
+            <li>Yes, you can view the menu <a href="menu.html">here.</a></li>
+        </ul>
+    </li>
+</ul>
+
+<script src="../js/myScript.js"></script>
+
+</body>
+</html>

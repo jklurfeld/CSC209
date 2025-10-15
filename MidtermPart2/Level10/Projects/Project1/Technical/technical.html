@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link id="theme" rel="stylesheet" href="css/lightMode.css">
+</head>
+
+<body>
+
+<div class="header">
+  <h1>Jessica's Schedule <img src="Images/cats.jpg" width="100px"></h1>
+  <p>I spent 1.5 hours on technical.</p>
+  <button onclick="displayDate()">Today's date is:</button>
+  <p id="date"></p>
+  <button onclick ="displaySources()">Credits</button>
+  <p id="sources"></p>
+  <button onclick="changeMenu()">Change Menu Location</button>
+</div>
+
+<div style="overflow:auto">
+  <div class="menu">
+    <a href="https://www.smith.edu/academics/computer-science#computer-science-major">Computer Science Major Requirements</a>
+    <a href="https://www.smith.edu/academics/programs-courses/academic-programs/music#music-major">Music Major Requirements</a>
+    <a href="https://www.smith.edu/academics/registrar/degree-requirements">Degree Requirements</a>
+    
+    <button onclick="changeTheme()">Toggle dark mode</button>
+
+    <!-- followed this tutorial: https://www.geeksforgeeks.org/javascript/how-to-switch-between-multiple-css-stylesheets-using-javascript/-->
+    <script>
+      
+    </script>
+  </div>
+
+  <div class="main">
+    <button onclick="showTable()">Hide/Show Table</button>
+    <table id="courses">
+        <tr>
+          <th>Course Title</th>
+          <th>Number of Credits</th>
+          <th>Class Times</th>
+          <th>Show/Hide<br><button onclick="showRows()">Show all rows</button></th>
+        </tr>
+        <tr id="row1">
+          <td><a href="html/bach.html">J.S. Bach Then and Now</a></td>
+          <td>3</td>
+          <td>M 5:15 - 7:45pm</td>
+          <td><button onclick="hideRow('row1')">Hide row</button></td>
+        </tr>
+        <tr id="row2">
+          <td><a href="html/voice.html">Voice Lessons</a></td>
+          <td>2</td>
+          <td>M 11 - 12pm</td>
+          <td><button onclick="hideRow('row2')">Hide row</button></td>
+        </tr>
+        <tr id="row3">
+          <td><a href="html/webProgramming.html">Web Programming</a></td>
+          <td>4</td>
+          <td>TTh 10:50 - 12:05pm</td>
+          <td><button onclick="hideRow('row3')">Hide row</button></td>
+        </tr>
+        <tr id="row4">
+        <td><a href="html/yoga.html">Yoga</a></td>
+          <td>1</td>
+          <td>MW 9:25 - 10:15am</td>
+          <td><button onclick="hideRow('row4')">Hide row</button></td>
+        </tr>
+        <tr id="row5">
+            <td><a href="html/capstoneRecital.html">Capstone Recital: Clarinet</a></td>
+            <td>4</td>
+            <td>Th 4:30 - 6:30pm</td>
+            <td><button onclick="hideRow('row5')">Hide row</button></td>
+        </tr>
+        <tr id = "row6">
+            <td>Orchestra</td>
+            <td>1</td>
+            <td>T 7 - 9:30pm</td>
+            <td><button onclick="hideRow('row6')">Hide row</button></td>
+        </tr>
+        <tr id="row7">
+            <td>Glee Club</td>
+            <td>1</td>
+            <td>M 4:30 - 5:40pm, W 4:10 - 5:40pm</td>
+            <td><button onclick="hideRow('row7')">Hide row</button></td>
+        </tr>
+        <tr id="row8">
+            <td>Chamber Singers</td>
+            <td>1</td>
+            <td>MTW 5:40 - 6:40pm</td>
+            <td><button onclick="hideRow('row8')">Hide row</button></td>
+        </tr>
+    </table>
+    <br>
+    <button type="button" onclick="displayCredits()">
+        Click me to display total credits</button>
+    <p id="demo"></p>
+  </div>
+
+
+</div>
+
+<script src="js/myScript.js"></script>
+
+</body>
+</html>

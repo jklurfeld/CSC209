@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+        const POINTS = [];
+        const NRPOINTS = 4;
+        const COLORS = ["red", "green", "blue", "purple", "teal"];
+        const NRSTEPS = 100;
+        var INTERVAL;
+        var currentSteps = 0;
+        </script>
+        
+        <script src="../js/drawing.js"></script>
+    </head>
+<body>
+<!-- <h1>HTML5 Canvas arc() Method</h1> -->
+
+<button onclick="start()">Start</button>
+<button onclick="randomize()">Randomize</button>
+
+<canvas id="myCanvas" width="500" height="500" style="border:1px solid #000000;">
+Sorry, your browser does not support canvas.
+</canvas>
+
+<script>
+    createPoints();
+    randomize()
+    draw();
+</script>
+
+</body>

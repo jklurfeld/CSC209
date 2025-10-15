@@ -1,0 +1,51 @@
+body {
+    background-color: darkgreen;
+    color: aliceblue;
+}
+
+a {
+    color: rgb(142, 218, 244)
+}
+
+.table{
+  display:block;
+}
+
+.menu {
+    float: left;
+    width: 20%;
+    text-align: center;
+    background-color: rgb(21, 81, 113);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  ul {
+    list-style-type: none;
+    height: 100%;
+  }
+  
+  /* this styles <a> elements inside menu elements */
+  .menu a {
+    /* background-color: #e5e5e5; */
+    padding: 8px;
+    margin-top: 7px;
+    display: block;
+    width: 100%;
+    /* color: black; */
+  }
+  
+  .main {
+    float: left;
+    width: 80%;
+    padding: 0 20px;
+  }
+
+  @media only screen and (max-width: 620px) {
+    /* For mobile phones: */
+    .menu, .main, .right {
+      width: 100%;
+    }
+  }

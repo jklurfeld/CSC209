@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../css/verticalTabs.css">
+        <script>
+            const NRTABS = 3;
+            const CITIES = ["London", "Paris", "Tokyo"];
+            const COUNTRIES = ["England", "France", "Japan"];
+        </script>
+        <script src="../js/verticalTabs.js"></script>
+    </head>
+
+    <body>
+        <h2>Vertical Tabs</h2>
+        <p>Click on the buttons inside the tabbed menu:</p>
+
+        <div class="tab" id ="linkDiv"></div>
+
+        <div id="contentDiv"></div>
+
+        <script>
+            createTabs();
+            document.getElementById("defaultOpen").click();
+        </script>
+    
+    </body>
+</html> 

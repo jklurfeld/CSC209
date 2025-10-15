@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/styles.css">
+        <script>
+            const SQUARES = [[0, 0, "down", "blue"], [0, 350, "left", "red"], [350, 350, "up", "green"], [350, 0, "right", "purple"]];
+        </script>
+        <script src="js/animation.js"></script>
+    </head>
+    <body>
+        <p>I spent 1.5 hours on technical.</p>
+
+        <button id="moveBtn" onclick="move()">Move squares</button> <br><br>  
+
+        <div id ="myContainer"></div>
+
+        <script>
+            createSquares();
+        </script>
+
+    </body>
+</html>

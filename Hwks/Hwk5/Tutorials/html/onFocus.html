@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function yellow(x) {
+  x.style.background = "yellow";
+}
+
+function normal(x){
+    x.style.background = "white";
+}
+</script>
+</head>
+<body>
+<h1>JavaScript HTML Events</h1>
+<h2>The onfocus Attribute</h2>
+
+Enter your first name: <input type="text" onfocus="yellow(this)" onblur="normal(this)">
+Enter your last name: <input type="text" onfocus="yellow(this)" onblur="normal(this)">
+
+<p>When the input field gets focus, a function is triggered which changes the background-color.</p>
+
+</body>
+</html>

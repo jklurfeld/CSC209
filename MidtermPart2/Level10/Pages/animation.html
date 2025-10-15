@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+        const POINTS = [];
+        var NRPOINTS = 4;
+        const COLORS = ["red", "green", "blue", "purple", "teal"];
+        const NRSTEPS = 100;
+        var INTERVAL;
+        var currentSteps = 0;
+        </script>
+        
+        <script src="../js/animation.js"></script>
+    </head>
+
+    <body>
+        <button onclick="start()">Start</button>
+        <button onclick="randomize()">Randomize</button>
+        Generate <input type="number" id="num" onchange="drawNPoints()"> points
+        <button onclick="reset()">Reset</button>
+        Select a temperature: 
+        <select name="temp" id="temp">
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+        </select>
+
+        <canvas id="myCanvas" width="500" height="500" style="border:1px solid #000000;">
+        Sorry, your browser does not support canvas.
+        </canvas>
+
+        <script>
+            createPoints(NRPOINTS);
+            randomize()
+            draw();
+        </script>
+    </body>
+</html>

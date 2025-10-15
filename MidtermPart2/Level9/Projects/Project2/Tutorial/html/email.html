@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to create an Email field.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<button onclick="func()">Try me</button>
+<p id="para"></p>
+
+<script>
+function myFunction() {
+  var x = document.createElement("INPUT");
+  x.setAttribute("type", "email");
+  x.setAttribute("value", "john@example.com");
+  x.setAttribute("id", "demo");
+  document.body.appendChild(x);
+}
+
+function func(){
+  var y = document.getElementById("demo").value;
+  document.getElementById("para").innerHTML = y;
+}
+</script>
+
+</body>
+</html>

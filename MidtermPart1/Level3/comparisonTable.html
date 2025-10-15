@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/comparisonTable.css">
+
+    <script>
+      const ROW="<tr><td>Sample Text</td><td><i class='CHECKCROSS1'></i></td><td><i class='CHECKCROSS2'></i></td>"
+    </script>
+  </head>
+  <body>
+
+    <h2>Comparison Table</h2>
+    <p>The link tag in the head of the html file allows you to link other files to this html page so this html file can reference them. The styling of the entire page is affected by the linked files.</p>
+
+    <table id="myTable">
+      <tr>
+        <th style="width:50%">Name</th>
+        <th>Part 1</th>
+        <th>Part 2</th>
+      </tr>
+    </table>
+
+    <script>
+      // alert(ROW);
+      let newRow = ROW.replace("CHECKCROSS1", "fa fa-check").replace("CHECKCROSS2", "fa fa-remove");
+      // alert(newRow);
+      document.getElementById("myTable").innerHTML += newRow;
+    </script>
+
+  </body>
+</html>

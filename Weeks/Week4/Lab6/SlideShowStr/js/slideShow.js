@@ -22,7 +22,7 @@ function createSlides(){
 function showSlides(n) {
   let i;
   let slides = document.getElementsByClassName("mySlides");
-  console.log("slides", slides);
+  console.log("slides:", slides);
   let dots = document.getElementsByClassName("dot");
   if (n > slides.length) {slideIndex = 1}    
   if (n < 1) {slideIndex = slides.length}

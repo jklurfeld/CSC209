@@ -1,0 +1,11 @@
+<html>
+    <body>
+        <h1> modifying a javascript object </h1>
+        <p id="demo"></p>
+        <script>
+            const user = {name: "alice", password:"password", age:42};
+            user["name"] = "bob";
+            document.getElementById("demo").innerHTML = user.name;
+        </script>
+    </body>
+</html>

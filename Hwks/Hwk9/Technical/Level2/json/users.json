@@ -1,0 +1,1 @@
+[{"username":"admin","password":"securepassword","loggedtimes":14},{"username":"alice","password":"password","loggedtimes":38,"minuteslogged":[12,8,19,33,22,0]},{"username":"carol","password":"letmein","loggedtimes":6,"minuteslogged":[16,21,38]},{"username":"erin","password":"0101","loggedtimes":13,"minuteslogged":[27,2,0]}]

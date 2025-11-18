@@ -1,0 +1,33 @@
+<?php
+include "functions.php";
+
+$users = fileToArray();
+$duplicate = false;
+
+// check if username already exists
+for ($i = 0; $i < count($users); $i++){
+    $user = $users[$i];
+    if (strcmp($user['username'],$_POST["username"]) == 0){
+        echo "Username already exists.";
+        $duplicate = true;
+    }
+}
+
+if ($duplicate == false){
+    $users[] = [
+        "username" => $_POST["username"],
+        "password" => $_POST["password"],
+        "loggedtimes" => 0,
+        "minuteslogged" => array(),
+    ];
+    $file = fopen("../json/users.json", "w");
+    fwrite($file, json_encode($users));
+    $folderName = "../Users/". $_POST["username"] . "/";
+    mkdir($folderName);
+    echo "User created sucessfully.";
+}
+echo "<br>";
+// make link to home page
+echo "<a href='../html/login.html.php'>Back to Login Page</a>";
+
+?>

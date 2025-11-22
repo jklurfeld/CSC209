@@ -33,33 +33,18 @@ function deleteUser(index){
     xhttp.send();
 }
 
-function editUser(index){
-    // const xhttp = new XMLHttpRequest();
-    // xhttp.onload = function() {
-    //     document.createElement("form");
-    //     document.createElement("input")
-    //     console.log(this.responseText);
-    //     document.getElementById("tableDiv").innerHTML = this.responseText;
-    // }
-    // xhttp.open("POST", "../php/editUser.php?index="+index);
-    // xhttp.send();
+function showEditForm(){
     let div = document.getElementById('editDiv');
     div.style.display = 'block';
+}
+
+function editUser(index){
+    let username = prompt("Enter new username");
+    let password = prompt("Enter new password");
     const xhttp = new XMLHttpRequest();
     xhttp.onload = function() {
         document.getElementById("tableDiv").innerHTML = this.responseText;
     }
-    xhttp.open("POST", "../php/editUser.php?index="+index);
+    xhttp.open("GET", "../php/editUser.php?index="+index+"&username="+username+"&password="+password);
     xhttp.send();
-    // div.innerHTML += "<form class='modal-content animate' action='../php/editUser.php' method='post>\
-    // <span onclick=\"document.getElementById('editDiv').style.display='none'\" class=\"close\" title=\"Close Modal\">&times;</span>\
-    // <div class=\container\">\
-    // <label for=\"username\"><b>Username</b></label>\
-    // <input type=\"text\" placeholder=\"Enter New Username\" name=\"username\">\
-    // <label for=\"password\"><b>Password</b></label>\
-    // <input type=\"password\" placeholder=\"Enter New Password\" name=\"password\">\
-    // <input type=\"user\" type=\"hidden\" value=\"index\">\
-    // <button type=\"submit\">Submit</button>\
-    // </div>\
-    // </form>";
 }

@@ -22,8 +22,8 @@
         <label for="password"><b>Password</b></label>
         <input type="password" placeholder="Enter New Passwor" name="password">
         <button type="submit">Submit</button>
-    </div>
-    </form>";
+        </div>
+        </form>
         </div>
 
         

@@ -2,20 +2,20 @@
     include "functions.php";
 
     $users = fileToArray();
-    var_dump($users);
     $index = $_REQUEST["index"];
-    var_dump($index);
-    var_dump($users[$index]['username']);
-    var_dump($_POST["username"]);
+    // var_dump($index);
+    // var_dump($users[$index]['username']);
+    // var_dump($_REQUEST["username"]);
 
-    if ($_POST["username"]){
-        $users[$index]['username'] = $_POST["username"];
+    if ($_REQUEST["username"]){
         $oldFolder = "../Users/" . $users[$index]['username'];
-        $newName = "../Users/" . $_POST["username"];
+        $newName = "../Users/" . $_REQUEST["username"];
         rename($oldFolder, $newName);
+        $users[$index]['username'] = $_REQUEST["username"];
     }
 
-    // get rid of user in json
+    $users[$index]['password'] = $_REQUEST["password"];
+
     $file = fopen("../json/users.json", "w");
     fwrite($file, json_encode($users));
     fclose($file);

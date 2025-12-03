@@ -1,0 +1,30 @@
+[
+    {
+        "username": "admin",
+        "password": "securepassword"
+    },
+    {
+        "username": "alice",
+        "password": "password"
+    },
+    {
+        "username": "carol",
+        "password": "letmein"
+    },
+    {
+        "username": "erin",
+        "password": "0101"
+    },
+    {
+        "username": "bob",
+        "password": "0000"
+    },
+    {
+        "username": "david",
+        "password": "0000"
+    },
+    {
+        "username": "nancy",
+        "password": "1111"
+    }
+]

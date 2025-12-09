@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <html>
     <head>
         <meta charset="utf-8">
@@ -9,6 +13,9 @@
         <script src="../js/myLib.js"></script>
     </head>
     <body>
+        <?php include "navBar.html.php"; ?>
+
+        <h4>Manage Users</h3>
         <button onclick="refresh()">Refresh</button>
         <div id="tableDiv" class="container">
         <?php 
@@ -17,39 +24,61 @@
         ?>
         </div>
         <br>
-        <h2>Create a new past performance post</h2>
+        <h4>Create a new past performance post</h4>
         <form action="../php/scripts/createPastPerformance.php" method="post">
         Video Link: <input type="text" name="videoLink"><br>
         Date: <input type="date" name="date"><br>
         Title: <input type="text" name="title"><br>
-        Description: <input type="text" name="description"><br>
+        Description: <textarea type="text" name="description" rows="5" cols ="40"></textarea><br>
         <input type="submit">
         </form>
 
-        <h2>Past Performances</h2>
+        <h4>Past Performances</h4>
+        <div id="ppDiv">
         <?php
         $path = "../json/past/*.json";
         $pastPerformances = glob($path);
-
-        echo "<table>";
-
-        echo "<tr>";
-        echo "<th>title</th>";
-        echo "<th>date</th>";
-        echo "<th>Delete</th>";
-        echo "<th>Edit</th>";
-        echo "</tr>";
-        
-        for ($i = 1; $i < count($users);$i++){
-            echo "<tr>";
-            echo "<td>{$users[$i]['username']}</td>";
-            echo "<td>{$users[$i]['password']}</td>";
-            echo "<td><button type='button' onclick=\"deleteUser($i)\">Delete User</button></td>";
-            echo "<td><button type='button' onclick=\"editUser($i)\">Edit User</button></td>";
-            echo "</tr>";
-        }
-        echo "</table>";
+        createTablePerformances($pastPerformances);
         ?>
+        </div>
+
+        <div class="modal fade" id="myModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title">Modal Header</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body" id="modalBody">
+                <form action="../php/scripts/editPost.php" method="post">
+                    <label for="videoLink"><b>Video Link</b></label>
+                    <input type="text" name="videoLink" required>
+                    <br>
+                    <label for="date"><b>Date</b></label>
+                    <input type="date" name="date" required>
+                    <br>
+                    <label for="title"><b>Title</b></label>
+                    <input type="text" name="title" required>
+                    <br>
+                    <label for="description"><b>Description</b></label>
+                    <input type="text" name="description" required>
+                    <br>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                Close
+                </button>
+            </div>
+
+            </div>
+        </div>
+        </div>
+
     </body>
 
 </html>

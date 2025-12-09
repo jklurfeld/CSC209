@@ -58,4 +58,38 @@
         }
         echo "</table>";
     }
+
+    function createTablePerformances($jsonarr){
+        echo "<table>";
+
+        echo "<tr>";
+        echo "<th>title</th>";
+        echo "<th>date</th>";
+        echo "<th>Delete</th>";
+        echo "<th>Edit</th>";
+        echo "</tr>";
+        
+        for ($i = 0; $i < count($jsonarr); $i++){
+            $contents = fileToArray($jsonarr[$i]);
+            echo "<tr>";
+            echo "<td>{$contents['title']}</td>";
+            echo "<td>{$contents['date']}</td>";
+            echo "<td><button type='button' onclick=\"deletePost($i)\">Delete Post</button></td>";
+            echo "<td><button type='button' data-bs-toggle='modal' data-bs-target='#myModal' onclick=\"editPost($i)\">Edit Post</button></td>";
+            echo "</tr>";
+        }
+        echo "</table>";
+    }
+
+    function displayComments($commentArr){
+        // $commentArr = $commentArr[0];
+        for ($i = 0; $i < count($commentArr); $i++){
+            $comment = $commentArr[$i];
+            // var_dump($comment);
+            foreach ($comment as $key => $value) {
+                echo "<p>" . $key . ": " . $value;
+            }
+        }
+
+    }
 ?>

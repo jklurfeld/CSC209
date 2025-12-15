@@ -8,7 +8,7 @@
 
     // get rid of user in json
     $file = fopen("../../json/users.json", "w");
-    fwrite($file, json_encode($users));
+    fwrite($file, json_encode($users, JSON_PRETTY_PRINT));
     fclose($file);
 
     createTable($users);

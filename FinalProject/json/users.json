@@ -4,19 +4,19 @@
         "password": "securepassword"
     },
     {
-        "username": "alice",
-        "password": "password"
-    },
-    {
-        "username": "carol",
-        "password": "9999"
+        "username": "caroline",
+        "password": "1111"
     },
     {
         "username": "david",
-        "password": "mypassword"
+        "password": "1010"
     },
     {
-        "username": "erin",
-        "password": "0101"
+        "username": "alice",
+        "password": "9999"
+    },
+    {
+        "username": "jessica",
+        "password": "password"
     }
 ]

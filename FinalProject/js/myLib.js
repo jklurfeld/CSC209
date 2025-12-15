@@ -36,6 +36,16 @@ function editUser(index){
     xhttp.send();
 }
 
+function editUsername(username){
+    let newUsername = prompt("Enter new username");
+    const xhttp = new XMLHttpRequest();
+    xhttp.onload = function() {
+        document.getElementById("hello").innerHTML = this.responseText;
+    }
+    xhttp.open("GET", "../php/scripts/editUsername.php?username="+username+"&newUsername="+newUsername);
+    xhttp.send();
+}
+
 function editPost(index){
     const xhttp = new XMLHttpRequest();
     xhttp.onload = function() {

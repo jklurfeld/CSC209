@@ -17,12 +17,13 @@ for ($i = 0; $i < count($users); $i++){
         $found = true;
         if ($_GET["username"] == "admin"){
             header("Location: ../../html/admin.html.php");
+            exit();
         }
     }
 }
 if ($found == false){
     echo "Login failed";
-    header("Location: ../html/login.html.php");
+    header("Location: ../../html/login.html.php?success=false");
     exit();
 }
 header("Location: ../../html/home.html.php");

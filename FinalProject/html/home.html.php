@@ -21,11 +21,23 @@
 
     <div class="container-fluid mt-3">
       <h3>Jessica's Performance Portfolio</h3>
-      <!-- <p>This example adds a dropdown menu in the navbar.</p> -->
-      <?php if (isset($_SESSION["verified"])) {
-              echo "Welcome ". $_SESSION["username"];
-            }
+      <?php 
+      //if (isset($_SESSION["verified"])) {
+      // echo "Welcome ". $_SESSION["username"];
+      //}
       ?>
+      <div class="row">
+    <div class="col-md-4">
+      <img src="../Resources/Images/home.JPG" class="img-fluid rounded">
+      <!-- Content for the first column goes here -->
+    </div>
+    <div class="col-md-8">
+      <p>Jessica Klurfeld is a music and computer science double major in her senior year at Smith College. 
+        She is the principal clarinetist of the Smith College Orchestra, and she was a winner of the 2023 Smith College Concerto competition. 
+        Also an avid vocalist, Jessica sings with the Smith College Glee Club and Chamber Singers. 
+        Her primary teachers include Hannah Berube, Lynn Sussman, and Amy Advocat. </p>
+    </div>
+  </div>
     </div>
 
   </body>

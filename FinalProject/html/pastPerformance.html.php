@@ -13,6 +13,7 @@ session_start();
             include "../php/functions.php";
         ?>
         <script src="../js/myLib.js"></script>
+        <link rel=stylesheet href="../css/styles.css">
     </head>
 
     <body>

@@ -15,9 +15,11 @@ session_start();
     <body>
         <?php include "navBar.html.php"; ?>
 
+        <div class="container-fluid mt-3">
         <h4>Manage Users</h3>
-        <button onclick="refresh()">Refresh</button>
-        <div id="tableDiv" class="container">
+        <button class='btn btn-primary' onclick="refresh()">Refresh</button>
+        <br><br>
+        <div id="tableDiv">
         <?php 
         $users = fileToArray("../json/users.json");
         createTable($users);
@@ -30,7 +32,7 @@ session_start();
         Date: <input type="date" name="date"><br>
         Title: <input type="text" name="title"><br>
         Description: <textarea type="text" name="description" rows="5" cols ="40"></textarea><br>
-        <input type="submit">
+        <input class='btn btn-primary' type="submit">
         </form>
 
         <h4>Past Performances</h4>
@@ -47,26 +49,30 @@ session_start();
             <div class="modal-content">
 
             <div class="modal-header">
-                <h5 class="modal-title">Modal Header</h5>
+                <h5 class="modal-title">Edit Post</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
 
             <div class="modal-body" id="modalBody">
-                <form action="../php/scripts/editPost.php" method="post">
+                <!-- <form action="../php/scripts/editPost.php" method="post">
+                    <div class='form-group'>
                     <label for="videoLink"><b>Video Link</b></label>
-                    <input type="text" name="videoLink" required>
-                    <br>
+                    <input class='form-control' type="text" name="videoLink" required>
+                    </div>
+                    <div class='form-group'>
                     <label for="date"><b>Date</b></label>
-                    <input type="date" name="date" required>
-                    <br>
+                    <input class='form-control' type="date" name="date" required>
+                    </div>
+                    <div class='form-group'>
                     <label for="title"><b>Title</b></label>
-                    <input type="text" name="title" required>
-                    <br>
+                    <input class='form-control'type="text" name="title" required>
+                    </div>
+                    <div class='form-group'>
                     <label for="description"><b>Description</b></label>
-                    <input type="text" name="description" required>
-                    <br>
-                    <button type="submit">Submit</button>
-                </form>
+                    <input class='form-control' type="text" name="description" required>
+                    </div>
+                    <button type="submit" class='btn btn-primary'>Submit</button>
+                </form> -->
             </div>
 
             <div class="modal-footer">
@@ -78,7 +84,7 @@ session_start();
             </div>
         </div>
         </div>
-
+    </div>
     </body>
 
 </html>

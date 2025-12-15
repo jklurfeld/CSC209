@@ -1,0 +1,13 @@
+.music-note {
+    position: absolute;
+    font-size:30px;
+    color: red;
+    /* Define a bouncing animation */
+    animation: bounce 1s infinite alternate;
+  }
+  
+  @keyframes bounce {
+    0% { top: 0px; }
+    100% { top:15px; }
+  }
+  

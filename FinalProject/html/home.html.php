@@ -19,17 +19,11 @@
 
   <?php include "navBar.html.php"; ?>
 
-    <div class="container-fluid mt-3">
+    <div class="container-fluid m-3">
       <h3>Jessica's Performance Portfolio</h3>
-      <?php 
-      //if (isset($_SESSION["verified"])) {
-      // echo "Welcome ". $_SESSION["username"];
-      //}
-      ?>
-      <div class="row">
+    <div class="row">
     <div class="col-md-4">
       <img src="../Resources/Images/home.JPG" class="img-fluid rounded">
-      <!-- Content for the first column goes here -->
     </div>
     <div class="col-md-8">
       <p>Jessica Klurfeld is a music and computer science double major in her senior year at Smith College. 

@@ -1,10 +1,10 @@
 var INTERVAL;
 
 let note = {
-    char: "\u266B",   // ♫
+    char: "\u266B",
     x: 10,
     y: 25,
-    vy: 0.5,          // vertical speed
+    vy: 0.5,
     size: 24,
     color: "white",
     font: "Arial"

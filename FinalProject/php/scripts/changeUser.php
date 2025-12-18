@@ -23,7 +23,6 @@
                 exit;
             }
         }
-        // echo $_POST['username'] . " ". $_POST['newUsername'];
         foreach ($users as &$user){
             if ($user['username'] == $_POST['username']){
                 $_SESSION['username'] = $_POST["newUsername"];

@@ -27,8 +27,6 @@ session_start();
             echo "<div class='alert alert-danger alert-dismissable'><button type='button' class='btn-close' data-bs-dismiss='alert'></button>Username already exists. Please choose a different username.</div>";
         }
     }
-    // echo "<button type='button' class='btn btn-primary' onclick=\"editUsername('". $_SESSION["username"]. "')\">Change Username</button><br><br>";
-    // echo "<button type='button' class='btn btn-primary' onclick=\"window.location.href='../php/scripts/editPassword.php?'\">Change Password</button>";
     ?>
     <h6> Change username and/or password </h6>
     <form action="../php/scripts/changeUser.php" method="post">

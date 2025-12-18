@@ -10,33 +10,9 @@
         fclose($file);
     }
 
-    // function verifyUser(){
-    //     if ($_SESSION["verified"] == true || $_SESSION["verified"] == ""){
-    //         return;
-    //     }
-    //     $arr = file_get_contents("../json/users.json");
-    //     $users = json_decode($arr, true);
-    //     $found = false;
-    
-    //     for ($i = 0; $i < count($users); $i++){
-    //         $user = $users[$i];
-    //         if (strcmp($user['username'],$_GET["username"]) == 0 && strcmp($user['password'], $_GET["password"]) == 0){
-    //             $_SESSION["verified"] = true;
-    //             $_SESSION["userIndex"] = $i;
-    //             $_SESSION["username"] = $_GET["username"];
-    //             $found = true;
-    //             if ($_GET["username"] == "admin"){
-    //                 header("Location: ../html/admin.html.php");
-    //             }
-    //         }
-    //     }
-    //     if ($found == false){
-    //         echo "Login failed";
-    //         header("Location: ../html/login.html.php");
-    //         exit();
-    //     }
-    //     header("Location: ../../html/home.html.php");
-    // }
+    function compareDate($a, $b){
+        return strtotime($a["date"]) <=> strtotime($b["date"]);
+      }
 
     function createTable($users){
         echo "<table class='table table-striped'>";
@@ -87,10 +63,8 @@
     }
 
     function displayComments($commentArr){
-        // $commentArr = $commentArr[0];
         for ($i = 0; $i < count($commentArr); $i++){
             $comment = $commentArr[$i];
-            // var_dump($comment);
             foreach ($comment as $key => $value) {
                 echo "<p class='comment rounded'>" . $key . ": " . $value;
             }

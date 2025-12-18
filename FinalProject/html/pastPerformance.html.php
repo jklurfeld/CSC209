@@ -24,7 +24,7 @@ session_start();
         $filePath = "../json/past/" . $file;
         $arr = fileToArray($filePath);
 
-        echo "<div class='container'>";
+        echo "<div class='container-fluid m-3'>";
         echo "<h1>". $arr["title"] . "</h1>";
         echo $arr["videoLink"];
         echo "<p>". $arr["date"] . "</p>";
@@ -34,15 +34,6 @@ session_start();
       <?php 
       if (isset($_SESSION["verified"])) {
         echo "<p>Leave a comment</p>".
-        // form comment version
-        // "<form action='../php/scripts/addComment.php' method='post'>".
-        // "<textarea id='commentBox' type='text' name='comment' rows='5' cols='100'></textarea><br>".
-        // "<input type='hidden' name='jsonFile' value='" . $file . "'>".
-        // "<input type='hidden' name='user' value='" . $_SESSION["username"] . "'>".
-        // "<input type='submit'>".
-        // "</form>";
-
-        // ajax comment
         "<textarea id='commentBox' type='text' name='comment' rows='5' cols='100'></textarea><br>".
         "<input id='file' type='hidden' name='jsonFile' value='" . $file . "'>".
         "<input id='username' type='hidden' name='user' value='" . $_SESSION["username"] . "'>".
@@ -52,13 +43,6 @@ session_start();
         echo "<p>Log in to leave a comment!</p>";
       }
       ?>
-
-      <!-- <p>Leave a comment</p>
-      <form action="../php/scripts/addComment.php" method="post">
-        <textarea type="text" name="comment" rows="5" cols ="100"></textarea><br>
-        <?php //echo "<input type='hidden' name='jsonFile' value='" . $file . "'>"; ?> 
-        <button onclick="addComment()">Submit Comment</button>
-      </form> -->
 
       <?php
         echo "<div id='commentDiv'>";

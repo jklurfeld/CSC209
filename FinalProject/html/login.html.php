@@ -15,7 +15,7 @@ session_start();
 <body>
 
 <?php include "navBar.html.php"; ?>
-<div class="container-fluid mt-3">
+<div class="container-fluid m-3">
   <h3>Login</h3>
   <?php
     if (isset($_GET["success"])){
@@ -62,7 +62,6 @@ session_start();
             <div class='form-group'>
               <label for="psw">Password:</label>
               <input type="password" class="form-control" placeholder="Enter Password" name="password" required>
-            
             </div>
             <button class='btn btn-primary' type="submit">Register</button>
           </form>

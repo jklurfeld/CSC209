@@ -1,9 +1,6 @@
 <?php
 session_start();
 
-// if ($_SESSION["verified"] == true || $_SESSION["verified"] == ""){
-//     return;
-// }
 $arr = file_get_contents("../../json/users.json");
 $users = json_decode($arr, true);
 $found = false;

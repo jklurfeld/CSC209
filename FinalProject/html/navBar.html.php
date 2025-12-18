@@ -6,11 +6,12 @@
 <?php 
     $path = "../json/past/*.json";
     $pastPerformances = glob($path);
-    $titles = [];
+    $ppTitles = [];
     for ($i = 0; $i < count($pastPerformances); $i++){
         $contents = fileToArray($pastPerformances[$i]);
-        $titles[] = $contents["title"];
+        $ppTitles[] = $contents["title"];
     }
+
 ?>
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -26,14 +27,14 @@
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">
         <li class="nav-item">
-        <a class="nav-link d-flex align-items-center"" href="#">Upcoming Performances</a>
+        <a class="nav-link d-flex align-items-center" href="upcomingPerformanceHome.html.php">Upcoming Performances</a>
         </li>
         <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Past Performances</a>
         <ul class="dropdown-menu">
             <?php
             for ($i = 0; $i < count($pastPerformances); $i++){
-            echo "<li><a class='dropdown-item' href='pastPerformance.html.php?a=" . basename($pastPerformances[$i]) . "'> ". $titles[$i] . "</a></li>";
+            echo "<li><a class='dropdown-item' href='pastPerformance.html.php?a=" . basename($pastPerformances[$i]) . "'> ". $ppTitles[$i] . "</a></li>";
             }
             ?>
         </ul>

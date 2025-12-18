@@ -23,8 +23,5 @@ if ($duplicate == false){
 }
 
 header("Location: ../../html/login.html.php?success=true");
-// echo "<br>";
-// // make link to home page
-// echo "<a href='../../html/login.html.php'>Back to Login Page</a>";
 
 ?>

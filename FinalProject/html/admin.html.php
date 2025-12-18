@@ -15,7 +15,7 @@ session_start();
     <body>
         <?php include "navBar.html.php"; ?>
 
-        <div class="container-fluid mt-3">
+        <div class="container-fluid m-3">
         <h4>Manage Users</h3>
         <button class='btn btn-primary' onclick="refresh()">Refresh</button>
         <br><br>
@@ -26,12 +26,52 @@ session_start();
         ?>
         </div>
         <br>
-        <h4>Create a new past performance post</h4>
-        <form action="../php/scripts/createPastPerformance.php" method="post">
-        Video Link: <input type="text" name="videoLink"><br>
-        Date: <input type="date" name="date"><br>
-        Title: <input type="text" name="title"><br>
-        Description: <textarea type="text" name="description" rows="5" cols ="40"></textarea><br>
+        <h4>Create a new post</h4>
+        <form action="../php/scripts/createPost.php" method="post" enctype="multipart/form-data">
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="performanceType" id="upRadio" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="true" aria-controls="collapseExample" value="upcoming" checked>
+            <label class="form-check-label" for="upRadio">
+                Upcoming Performance
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="performanceType" id="ppRadio" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="collapseExample" value="past">
+            <label class="form-check-label" for="ppRadio">
+                Past Performance
+            </label>
+        </div>
+        <div class='collapse multi-collapse' id='videoLink'>
+            <div class='form-group'>
+                <label for='videoLink'>Video Link:</label>
+                <textarea type="text" name="videoLink" rows='5' cols='40'></textarea>
+            </div>
+        </div>
+        <div class='collapse multi-collapse show' id='image'>
+            <div class='form-group'>
+                <label for='fileToUpload'>Image:</label>
+                <input type="file" id="fileToUpload" name="fileToUpload">
+            </div>
+            <div class='form-group'>
+                <label for='time'>Time:</label>
+                <input type="time" id="time" name="time">
+            </div>
+            <div class='form-group'>
+                <label for='location'>Location:</label>
+                <input type="text" id="location" name="location">
+            </div>
+        </div>
+        <div class='form-group'>
+            <label for='date'>Date:</label>
+            <input type="date" name="date">
+        </div>
+        <div class='form-group'>
+            <label for='title'>Title:</label>
+            <input type="text" name="title">
+        </div>
+        <div class='form-group'>
+            <label for='description'>Description:</label>
+            <textarea type="text" name="description" rows='5' cols='40'></textarea>
+        </div>
         <input class='btn btn-primary' type="submit">
         </form>
 
@@ -54,31 +94,10 @@ session_start();
             </div>
 
             <div class="modal-body" id="modalBody">
-                <!-- <form action="../php/scripts/editPost.php" method="post">
-                    <div class='form-group'>
-                    <label for="videoLink"><b>Video Link</b></label>
-                    <input class='form-control' type="text" name="videoLink" required>
-                    </div>
-                    <div class='form-group'>
-                    <label for="date"><b>Date</b></label>
-                    <input class='form-control' type="date" name="date" required>
-                    </div>
-                    <div class='form-group'>
-                    <label for="title"><b>Title</b></label>
-                    <input class='form-control'type="text" name="title" required>
-                    </div>
-                    <div class='form-group'>
-                    <label for="description"><b>Description</b></label>
-                    <input class='form-control' type="text" name="description" required>
-                    </div>
-                    <button type="submit" class='btn btn-primary'>Submit</button>
-                </form> -->
             </div>
 
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                Close
-                </button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             </div>
 
             </div>

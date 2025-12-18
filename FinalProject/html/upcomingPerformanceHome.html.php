@@ -17,19 +17,16 @@ session_start();
     <body>
       <?php include "navBar.html.php"; ?>
       <?php
-
-        $file = $_GET["a"];
-        $filePath = "../json/upcoming/" . $file;
-        $arr = fileToArray($filePath);
-
-        echo "<div class='container'>";
-        echo "<h1>". $arr["title"] . "</h1>";
-        if ($arr["liveStreamLink"]){
-          echo "Watch the livestream <a href=" . $arr["liveStreamLink"] . ">here</a>";
+        $path = "../json/upcoming/*.json";
+        $upcomingPerformances = glob($path);
+        $performances = [];
+        for ($i = 0; $i < count($upcomingPerformances); $i++){
+          $contents = fileToArray($upcomingPerformances[$i]);
+          $performances[] = $contents;
         }
-        echo "<p>". $arr["date"] . "</p>";
-        echo "<p>". $arr["description"] . "</p>";
-        echo "</div>";
+
+        usort($performances, 'compareDate');
+        var_dump($performances);
       ?>
     </body>
 </html>

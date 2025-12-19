@@ -24,17 +24,20 @@ session_start();
         $filePath = "../json/past/" . $file;
         $arr = fileToArray($filePath);
 
-        echo "<div class='container-fluid m-3'>";
-        echo "<h1>". $arr["title"] . "</h1>";
+        $date = new DateTime($arr["date"]);
+        $formattedDate = $date->format('F j, Y');
+
+        echo "<div class='container-fluid p-3'>";
+        echo "<h2>". $arr["title"] . "</h2>";
         echo $arr["videoLink"];
-        echo "<p>". $arr["date"] . "</p>";
+        echo "<p>". $formattedDate . "</p>";
         echo "<p>". $arr["description"] . "</p>";
       ?>
 
       <?php 
       if (isset($_SESSION["verified"])) {
         echo "<p>Leave a comment</p>".
-        "<textarea id='commentBox' type='text' name='comment' rows='5' cols='100'></textarea><br>".
+        "<textarea id='commentBox' type='text' name='comment' rows='5' cols='75' style='box-shadow: 2px 2px 15px 2px rgba(0, 0, 0, 0.3);'></textarea><br>".
         "<input id='file' type='hidden' name='jsonFile' value='" . $file . "'>".
         "<input id='username' type='hidden' name='user' value='" . $_SESSION["username"] . "'>".
         "<button onclick='addComment()'>Submit</button>";
@@ -43,9 +46,9 @@ session_start();
         echo "<p>Log in to leave a comment!</p>";
       }
       ?>
-
+      <br>
       <?php
-        echo "<div id='commentDiv'>";
+        echo "<div class='mt-3' id='commentDiv'>";
         $comments = $arr["comments"];
         displayComments($comments);
         echo "</div>";

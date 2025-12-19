@@ -19,8 +19,7 @@
 
   <?php include "navBar.html.php"; ?>
 
-    <div class="container-fluid m-3">
-      <h3>Jessica's Performance Portfolio</h3>
+    <div class="container-fluid p-3">
     <div class="row">
     <div class="col-md-4">
       <img src="../Resources/Images/home.JPG" class="img-fluid rounded">

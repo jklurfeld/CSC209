@@ -14,7 +14,14 @@
 
 ?>
 
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+<header>
+    <div class="d-flex p-3">
+    <div><h1>Jessica Klurfeld</h1></div>
+    <div class="ms-auto"><h1>clarinet</h1></div>
+    </div>
+</header>
+
+<nav class="navbar navbar-expand-sm navbar-light bg-info" style="background-color: #26a5ff;">
 <div class="container-fluid">
     <ul class="navbar-nav">
         <li class="nav-item">
@@ -27,7 +34,7 @@
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">
         <li class="nav-item">
-        <a class="nav-link d-flex align-items-center" href="upcomingPerformanceHome.html.php">Upcoming Performances</a>
+        <a class="nav-link d-flex align-items-center" href="upcomingPerformances.html.php">Upcoming Performances</a>
         </li>
         <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Past Performances</a>

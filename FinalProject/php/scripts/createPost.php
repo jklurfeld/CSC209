@@ -54,6 +54,8 @@ else {
     // Check if $uploadOk is set to 0 by an error
     if ($uploadOk == 0) {
     echo "Sorry, your file was not uploaded.";
+    header("Location: ../../html/admin.html.php?success=false");
+    exit();
     // if everything is ok, try to upload file
     } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
@@ -71,10 +73,10 @@ else {
     // create json file
     $filename = "../../json/upcoming/up". $nrPages["upcomingPerformanceId"] . ".json";
 
-    $page = "Location: ../../html/upcomingPerformanceInd.html.php?a=up" . $nrPages["upcomingPerformanceId"] . ".json";
+    $page = "Location: ../../html/upcomingPerformances.html.php";
     
     // increment nrPages counter
-    $nrPages["pastPerformanceId"]++;
+    $nrPages["upcomingPerformanceId"]++;
 }
 
 $data["date"] = $_POST["date"];

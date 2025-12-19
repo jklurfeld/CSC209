@@ -15,7 +15,13 @@ session_start();
     <body>
         <?php include "navBar.html.php"; ?>
 
-        <div class="container-fluid m-3">
+        <?php
+            if (isset($_GET["success"]) && $_GET["success"]== "false"){
+                echo "<div class='alert alert-danger alert-dismissable'><button type='button' class='btn-close' data-bs-dismiss='alert'></button>There was an error uploading the image for the new upcoming performance.</div>";
+            }
+        ?>
+
+        <div class="container-fluid p-3">
         <h4>Manage Users</h3>
         <button class='btn btn-primary' onclick="refresh()">Refresh</button>
         <br><br>
@@ -80,7 +86,16 @@ session_start();
         <?php
         $path = "../json/past/*.json";
         $pastPerformances = glob($path);
-        createTablePerformances($pastPerformances);
+        createTablePastPerformances($pastPerformances);
+        ?>
+        </div>
+
+        <h4>Upcoming Performances</h4>
+        <div id="upDiv">
+        <?php
+        $path = "../json/upcoming/*.json";
+        $upcomingPerformances = glob($path);
+        createTableUpcomingPerformances($upcomingPerformances);
         ?>
         </div>
 

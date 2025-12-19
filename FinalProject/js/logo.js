@@ -6,7 +6,7 @@ let note = {
     y: 25,
     vy: 0.5,
     size: 24,
-    color: "white",
+    color: "black",
     font: "Arial"
 };
 

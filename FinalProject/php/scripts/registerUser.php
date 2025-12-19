@@ -10,6 +10,8 @@ for ($i = 0; $i < count($users); $i++){
     if (strcmp($user['username'],$_POST["username"]) == 0){
         echo "Username already exists.";
         $duplicate = true;
+        header("Location: ../../html/login.html.php?success=error");
+        exit();
     }
 }
 

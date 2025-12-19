@@ -16,12 +16,22 @@ function deleteUser(index){
     xhttp.send();
 }
 
+// for deleting past performances
 function deletePost(index){
     const xhttp = new XMLHttpRequest();
     xhttp.onload = function() {
         document.getElementById("ppDiv").innerHTML = this.responseText;
     }
     xhttp.open("POST", "../php/scripts/deletePost.php?index="+index);
+    xhttp.send();
+}
+
+function deleteUpcomingPost(index){
+    const xhttp = new XMLHttpRequest();
+    xhttp.onload = function() {
+        document.getElementById("upDiv").innerHTML = this.responseText;
+    }
+    xhttp.open("POST", "../php/scripts/deleteUpcomingPost.php?index="+index);
     xhttp.send();
 }
 
@@ -46,12 +56,12 @@ function editUsername(username){
     xhttp.send();
 }
 
-function editPost(index){
+function editPost(index, type){
     const xhttp = new XMLHttpRequest();
     xhttp.onload = function() {
         document.getElementById("modalBody").innerHTML = this.responseText;
     }
-    xhttp.open("GET", "../php/scripts/getPostContent.php?index="+index);
+    xhttp.open("GET", "../php/scripts/getPostContent.php?index="+index+"&type="+type);
     xhttp.send();
 }
 

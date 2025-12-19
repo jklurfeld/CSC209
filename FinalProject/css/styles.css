@@ -1,4 +1,6 @@
 .comment {
-    background-color: rgba(203, 203, 203, 0.591);
+    /* background-color: rgba(203, 203, 203, 0.591); */
     padding: 10px;
+    max-width: 100%;
+    box-shadow: 2px 2px 15px 2px rgba(0, 0, 0, 0.3);
 }

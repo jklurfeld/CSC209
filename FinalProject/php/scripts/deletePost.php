@@ -8,6 +8,6 @@
     unlink($pastPerformances[$index]);
 
     $pastPerformances = glob($path);
-    createTablePerformances($pastPerformances);
+    createTablePastPerformances($pastPerformances);
 
 ?>

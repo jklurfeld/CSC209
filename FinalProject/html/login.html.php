@@ -15,12 +15,15 @@ session_start();
 <body>
 
 <?php include "navBar.html.php"; ?>
-<div class="container-fluid m-3">
+<div class="container-fluid p-3">
   <h3>Login</h3>
   <?php
     if (isset($_GET["success"])){
       if ($_GET["success"] == "true"){
         echo "<div class='alert alert-success alert-dismissable'><button type='button' class='btn-close' data-bs-dismiss='alert'></button>User successfully registered.</div>";
+      }
+      else if ($_GET["success"] == "error"){
+        echo "<div class='alert alert-danger alert-dismissable'><button type='button' class='btn-close' data-bs-dismiss='alert'></button>Username is taken. Please choose a different username.</div>";
       }
       else{
         echo "<div class='alert alert-danger alert-dismissable'><button type='button' class='btn-close' data-bs-dismiss='alert'></button>Incorrect username or password</div>";
